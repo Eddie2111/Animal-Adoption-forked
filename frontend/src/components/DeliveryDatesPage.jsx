@@ -7,6 +7,7 @@ function DeliveryDatesPage() {
   useEffect(() => {
     axios.get('http://localhost:5000/api/animals/delivery-availability')
       .then((response) => {
+        console.log(response.data);
         setAnimals(response.data);
       })
       .catch((error) => {
@@ -20,7 +21,7 @@ function DeliveryDatesPage() {
       <ul>
         {animals.map((animal) => (
           <li key={animal._id}>
-            {animal.name}: {animal.availableDate ? new Date(animal.availableDate).toLocaleDateString() : 'N/A'}
+            {animal.name}:{animal.deliveryDate?animal.deliveryDate:'n/a'}
           </li>
         ))}
       </ul>

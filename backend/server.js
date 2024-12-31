@@ -28,6 +28,7 @@ mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 const animalRoutes = require('./routes/animalRoutes');
 app.use('/api/animals', animalRoutes);
 
+
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

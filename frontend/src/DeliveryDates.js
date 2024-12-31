@@ -9,7 +9,8 @@ const DeliveryDates = () => {
     useEffect(() => {
         const fetchDeliveryDates = async () => {
             try {
-                const response = await axios.get('/api/animals/delivery-dates');
+                const response = await axios.get('http://localhost:5000/api/animals/delivery-dates');
+                console.log(response.data);
                 setAnimals(response.data);
                 setLoading(false);
             } catch (err) {
